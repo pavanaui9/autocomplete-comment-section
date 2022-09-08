@@ -1,0 +1,71 @@
+<html>
+<div id="wrapper">
+	<div id="input-box" contenteditable="true"></div>
+	<div id="mention-select-choices" class="hidden"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="auto.js"></script>
+<style>
+#wrapper {
+	width: 600px;
+	margin: 15px auto;
+	position: relative;
+}
+
+#input-box {
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 4px;
+}
+.mention {
+	display: inline-block;
+	position: relative;
+}
+.mention:not(.ignore) {
+	padding: 2px 8px 2px 4px;
+	border-radius: 50px;
+	background-color: #d8dbe3;
+	color: #616775;
+}
+.mention:not(.ignore).focused {
+	background-color: #ffe196;
+}
+.mention.ignore {
+	/*border: 1px solid black;*/
+}
+.mention.ignore.focused {
+	background-color: #ffe196;
+}
+
+.hidden {
+	display: none;
+}
+#mention-select-choices {
+	position: absolute;
+	margin-top: 25px;
+	margin-left: -10px;
+	background: #eee;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	user-select: none;
+	min-width: 200px;
+	max-height: 200px;
+	overflow-y: auto;
+	padding: 5px 0;
+	box-shadow: 0 7px 15px 0 rgba(0,0,0,.3);
+}
+#mention-select-choices ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#mention-select-choices li {
+	cursor: pointer;
+	padding: 10px;
+}
+#mention-select-choices li.hover {
+	background: rgb(195, 215, 255);
+}
+
+</style>
+</html>
